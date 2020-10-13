@@ -1,25 +1,26 @@
 import React from 'react'
 import './Contact.css'
 
-const Contact = () => {
-  const name = 'Carol Kim'
-  const avatar = 'https://randomuser.me/api/portraits/women/74.jpg'
-  const online = true
+const Contact = props => {
   return (
     <div className="Contact">
       <img
         className='avatar'
-        src={avatar}
+        src={props.avatar}
         alt="avatar"
       />
-      <p className="name">{name}</p>
-      <div className="status">
-        <p className={online? 'status-online' : 'status-offline'}></p>
-        <p className="status-text">
-          {online? 'online' : 'offline'}
+      <div className="info">
+        <div>
+          <p className="name">{props.name}</p>
+        </div>
+        <div className="status">
+        <p className={props.online? 'status-online' : 'status-offline'}></p>
+        <p className="status-text"> 
+          {props.online? 'online' : 'offline'}
         </p>
       </div>
     </div>
+  </div>
   )
 }
 
